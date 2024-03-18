@@ -109,6 +109,11 @@ if exist "%folderPath%" (
 )
 
 cd "%destinationDir%\InfiniteFusionApp" 
+
+if exist "Lib\InfiniteFusionApp.application" (
+    echo: EXTRACT InfiniteFusionSetup.zip. You did not extract before running this!!!
+)
+
 start "Setup" "Lib\InfiniteFusionApp.application"
 rem Wait for setup.exe to finish running
 echo Click Install to Install the App. 
