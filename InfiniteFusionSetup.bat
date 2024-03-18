@@ -110,7 +110,7 @@ if exist "%folderPath%" (
 
 cd "%destinationDir%\InfiniteFusionApp" 
 
-if exist "Lib\InfiniteFusionApp.application" (
+if not exist "Lib\InfiniteFusionApp.application" (
     echo: EXTRACT InfiniteFusionSetup.zip. You did not extract before running this!!!
 )
 
