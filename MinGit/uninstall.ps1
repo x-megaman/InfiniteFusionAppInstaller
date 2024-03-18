@@ -3,7 +3,7 @@ $UninstallString = $InstalledApplicationNotMSI | ? { $_.displayname -match "Infi
 $wshell = new-object -com wscript.shell
 $selectedUninstallString = $UninstallString.UninstallString
 $wshell.run("cmd /c $selectedUninstallString")
-Start-Sleep 5
+Start-Sleep 3
 $wshell.sendkeys("`"OK`"~")
 Start-Sleep 3
 exit

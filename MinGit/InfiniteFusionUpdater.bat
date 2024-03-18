@@ -55,7 +55,7 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global http.lowSpeedTime 600
 %mgit% init . 
 
-%mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionApp.git" 
+%mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionAppInstaller.git" 
 %mgit% fetch origin main --depth=1
 %mgit% reset --hard origin/main
 
