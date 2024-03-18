@@ -71,11 +71,17 @@ cd "%destinationDir%\InfiniteFusionApp"
 if exist "%folderPath%" (
     powershell -WindowStyle Hidden -File "MinGit\uninstall.ps1"
 )
-
+echo: 
+echo -----------------------------------------------------------------------------------  
+echo: 
 cd "%destinationDir%\InfiniteFusionApp"
 
 start "Setup" "Lib\InfiniteFusionApp.application"
 rem Wait for setup.exe to finish running
 echo -----------------------------------------------------------------------------------  
-echo Continue with the Setup and click Install. The app will be installed on your desktop. You can close this now.
+echo: 
+echo Click Install to Install the App. 
+echo The app will be installed on your desktop. You can close this now.
+echo: 
+echo -----------------------------------------------------------------------------------  
 pause

@@ -17,8 +17,12 @@ if not defined UninstallString (
 )
 
 :: Run UninstallString
+echo:
+echo -----------------------------------------------------------------------------------
 echo Uninstalling %TargetApp%...
+echo:
 echo Click OK to Uninstall so we can install the latest version.
 cmd /c %UninstallString%
-
+echo:
+echo -----------------------------------------------------------------------------------
 endlocal

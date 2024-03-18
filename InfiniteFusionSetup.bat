@@ -59,11 +59,12 @@ echo ---------------------------------------------------------------------------
 %mgit% init . 
 
 %mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionAppInstaller.git" 
-%mgit% fetch origin main --depth=1
+%mgit% fetch origin main
 %mgit% reset --hard origin/main
 
 rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
-
+echo: 
+echo -----------------------------------------------------------------------------------  
 set "destinationDir=%APPDATA%\spriteInstaller\"
 
 
@@ -72,7 +73,34 @@ xcopy /s /e /i "%CD%" "%destinationDir%\InfiniteFusionApp"
 
 
 xcopy /s /e /i "%destinationDir%\InfiniteFusionApp\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionApp\"
-
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo -----------------------------------------------------------------------------------  
 
 cd "%destinationDir%\InfiniteFusionApp"
 
@@ -81,9 +109,14 @@ if exist "%folderPath%" (
 )
 
 cd "%destinationDir%\InfiniteFusionApp"
-
+echo: 
+echo -----------------------------------------------------------------------------------  
 start "Setup" "Lib\setup.exe"
 rem Wait for setup.exe to finish running
 echo -----------------------------------------------------------------------------------  
-echo Continue with the Setup and click Install. The app will be installed on your desktop. You can close this now.
+echo: 
+echo Click Install to Install the App. 
+echo The app will be installed on your desktop. You can close this now.
+echo: 
+echo -----------------------------------------------------------------------------------  
 pause
