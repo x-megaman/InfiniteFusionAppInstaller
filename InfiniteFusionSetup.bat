@@ -77,7 +77,7 @@ xcopy /s /e /i "%destinationDir%\InfiniteFusionApp\MinGit\InfiniteFusionUpdater.
 cd "%destinationDir%\InfiniteFusionApp"
 
 if exist "%folderPath%" (
-    powershell -WindowStyle Hidden -File "MinGit\uninstall.ps1"
+    call "MinGit\uninstall.bat"
 )
 
 cd "%destinationDir%\InfiniteFusionApp"
