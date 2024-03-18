@@ -55,7 +55,7 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global http.lowSpeedTime 600
 %mgit% init . 
 
-%mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionAppInstaller.git" 
+%mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionApp.git" 
 %mgit% fetch origin main --depth=1
 %mgit% reset --hard origin/main
 
@@ -64,7 +64,7 @@ rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
 set "destinationDir=%APPDATA%\spriteInstaller\"
 
 
-rd /s /q "%destinationDir%\InfiniteFusionApp"
+rmdir /s /q "%destinationDir%\InfiniteFusionApp"
 xcopy /s /e /i "%CD%" "%destinationDir%\InfiniteFusionApp"
 
 
