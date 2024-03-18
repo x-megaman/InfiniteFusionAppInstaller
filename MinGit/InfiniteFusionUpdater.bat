@@ -38,7 +38,7 @@ echo:
 echo:
 echo:
 echo -----------------------------------------------------------------------------------  
-echo Welcome! This is the Pokemon Infinite Fusion Game Installer!
+echo Welcome! This is the Pokemon Infinite Fusion App Updater!
 echo Developed by megaman
 echo: 
 echo -----------------------------------------------------------------------------------  
@@ -53,12 +53,12 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global pack.windowMemory 2047m
 %mgit% config --global http.lowSpeedLimit 1000
 %mgit% config --global http.lowSpeedTime 600
-%mgit% config --local core.autocrlf false
 %mgit% config --global core.autocrlf false
 %mgit% init . 
 
 %mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionAppInstaller.git" 
-%mgit% fetch origin main --depth=1
+%mgit% config --local core.autocrlf false
+%mgit% fetch origin main
 %mgit% reset --hard origin/main
 
 rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
@@ -75,10 +75,8 @@ echo:
 echo -----------------------------------------------------------------------------------  
 echo: 
 cd "%destinationDir%\InfiniteFusionApp"
-
 start "Setup" "Lib\InfiniteFusionApp.application"
 rem Wait for setup.exe to finish running
-echo -----------------------------------------------------------------------------------  
 echo: 
 echo Click Install to Install the App. 
 echo The app will be installed on your desktop. You can close this now.
