@@ -109,7 +109,7 @@ if exist "%folderPath%" (
 )
 
 cd "%destinationDir%\InfiniteFusionApp" 
-start "Setup" "Lib\setup.exe"
+start "Setup" "Lib\InfiniteFusionApp.application"
 rem Wait for setup.exe to finish running
 echo Click Install to Install the App. 
 echo The app will be installed on your desktop. You can close this now.
