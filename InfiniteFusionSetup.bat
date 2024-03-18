@@ -53,6 +53,9 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global pack.windowMemory 2047m
 %mgit% config --global http.lowSpeedLimit 1000
 %mgit% config --global http.lowSpeedTime 600
+%mgit% config --local core.autocrlf false
+%mgit% config --global core.autocrlf false
+
 %mgit% init . 
 
 %mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionAppInstaller.git" 
