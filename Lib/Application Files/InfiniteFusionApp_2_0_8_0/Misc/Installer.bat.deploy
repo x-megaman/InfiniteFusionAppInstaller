@@ -1,0 +1,87 @@
+@echo off
+
+set batchDirectory=%0
+set cwdPath=%batchDirectory:\Installer.bat=%
+set cwdPathQ=%cwdPath:"=%
+
+cd /D %cwdPath%
+
+.\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
+
+set GIT_TRACE_PACKET=1
+set GIT_TRACE=1
+set GIT_CURL_VERBOSE=1
+
+set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo -----------------------------------------------------------------------------------  
+echo Welcome! This is the Pokemon Infinite Fusion Game Installer!
+echo Original Installer/Updater made by Hungry Pickle
+echo Updated by megaman
+echo: 
+echo This will take about 3-10 minutes to install DEPENDING on YOUR computer AND YOUR internet.
+echo -----------------------------------------------------------------------------------  
+%mgit% config --global http.postBuffer 1048576000 >> installerrorlog.txt 2>&1
+%mgit% config --global http.version HTTP/1.1 >> installerrorlog.txt 2>&1
+%mgit% config --global pack.window 1 >> installerrorlog.txt 2>&1
+%mgit% config --global core.compression 0 >> installerrorlog.txt 2>&1
+%mgit% config --global core.packedGitLimit 512m >> installerrorlog.txt 2>&1
+%mgit% config --global core.packedGitWindowSize 512m >> installerrorlog.txt 2>&1
+%mgit% config --global pack.deltaCacheSize 2047m >> installerrorlog.txt 2>&1
+%mgit% config --global pack.packSizeLimit 2047m >> installerrorlog.txt 2>&1
+%mgit% config --global pack.windowMemory 2047m >> installerrorlog.txt 2>&1
+%mgit% config --global http.lowSpeedLimit 1000 >> installerrorlog.txt 2>&1
+%mgit% config --global http.lowSpeedTime 600 >> installerrorlog.txt 2>&1
+%mgit% init . >> installerrorlog.txt 2>&1
+echo:
+echo How Do I Check Progress?
+echo:
+echo %CD%\installerrorlog.txt: Open the txt file to check progress. Reopening the file will refresh progress.
+echo ----------------------------------------------------------------------------------- 
+echo:
+echo Reopening the txt file isn't updating any progress?
+echo:
+echo DO NOT click inside this window. It will pause the installation.
+echo Click Inside and Press ENTER to unpause.
+echo ----------------------------------------------------------------------------------- 
+echo:
+echo I keep seeing "failed to decrypt data, need more data" in the txt file!
+echo:
+echo Ignore them. It takes many attempts to establish a connection to our game repo.
+echo ----------------------------------------------------------------------------------- 
+%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" >> installerrorlog.txt 2>&1
+%mgit% fetch origin releases --depth=1 >> installerrorlog.txt 2>&1
+%mgit% reset --hard origin/releases >> installerrorlog.txt 2>&1
+echo:
+echo Thank you for installing!
+set GIT_TRACE_PACKET=
+set GIT_TRACE=
+set GIT_CURL_VERBOSE=
+
+exit
