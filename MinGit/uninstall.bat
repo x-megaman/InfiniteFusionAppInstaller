@@ -22,5 +22,3 @@ echo Click OK to Uninstall so we can install the latest version.
 cmd /c %UninstallString%
 
 endlocal
-
-exit
