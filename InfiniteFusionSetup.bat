@@ -1,5 +1,7 @@
 @echo off
 
+cd /d "%~dp0"
+
 :: Define the folder name
 set "folderName=megaman"
 
