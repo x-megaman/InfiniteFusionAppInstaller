@@ -71,8 +71,8 @@ set "destinationDir=%APPDATA%\spriteInstaller\"
 
 
 rmdir /s /q "%destinationDir%\InfiniteFusionApp"
-xcopy /s /e /i "%CD%\Lib" "%destinationDir%\InfiniteFusionApp"
-xcopy /s /e /i "%CD%\MinGit" "%destinationDir%\InfiniteFusionApp"
+xcopy /s /e /i "%CD%\Lib" "%destinationDir%\InfiniteFusionApp\Lib"
+xcopy /s /e /i "%CD%\MinGit" "%destinationDir%\InfiniteFusionApp\MinGit"
 
 xcopy /s /e /i "%destinationDir%\InfiniteFusionApp\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionApp\"
 echo:
