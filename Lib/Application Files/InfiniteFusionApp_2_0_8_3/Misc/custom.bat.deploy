@@ -67,7 +67,7 @@ echo:
 echo The Game will open once done. Leave it open to process the sprites in game!
 echo In the Installer itself, go to the Settings Menu and Enabled Preloaded to launch Preloaded.
 echo INSTALLER CUSTOM SPRITES >> errorlog.txt 2>&1
-rd /s /q "%git_directory%"
+IF EXIST "%git_directory%" rd /s /q "%git_directory%" >> errorlog.txt 2>&1
 %mgit% config --global http.postBuffer 1048576000 >> errorlog.txt 2>&1
 %mgit% config --global http.version HTTP/1.1 >> errorlog.txt 2>&1
 %mgit% config --global pack.window 1 >> errorlog.txt 2>&1
