@@ -2,7 +2,7 @@
 
 setlocal
 
-set "destinationDir=%APPDATA%\spriteInstaller\"
+set "destinationDir=%APPDATA%\spriteInstaller"
 cd "%destinationDir%\InfiniteFusionApp"
 
 .\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
