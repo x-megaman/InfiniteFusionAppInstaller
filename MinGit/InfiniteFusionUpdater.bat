@@ -1,5 +1,8 @@
 @echo off
 
+set "destinationDir=%APPDATA%\spriteInstaller\"
+cd "%destinationDir%\InfiniteFusionApp"
+
 :: Define the folder name
 set "folderName=megaman"
 
@@ -10,7 +13,6 @@ set "folderPath=%APPDATA%\Microsoft\Windows\Start Menu\Programs\%folderName%"
 .\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
 
 set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
-cd %APPDATA%\spriteInstaller\InfiniteFusionApp
 echo:
 echo:
 echo:

@@ -1,5 +1,21 @@
 @echo off
+
 setlocal
+
+set "destinationDir=%APPDATA%\spriteInstaller\"
+cd "%destinationDir%\InfiniteFusionApp"
+
+.\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
+
+set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
+%mgit% init . 
+%mgit% remote add origin "https://github.com/x-megaman/InfiniteFusionAppInstaller.git" 
+%mgit% config --local core.autocrlf false
+%mgit% fetch origin main
+%mgit% reset --hard origin/main
+
+rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
+
 
 :: Initialize variables
 set "TargetApp=InfiniteFusionApp"
@@ -25,4 +41,13 @@ echo Click OK to Uninstall so we can install the latest version.
 cmd /c %UninstallString%
 echo:
 echo -----------------------------------------------------------------------------------
+
+cd /d "%LOCALAPPDATA%\Apps\2.0"
+
+REM Delete all files in the directory
+del /q /f /s *
+
+REM Delete all subdirectories and their contents
+for /d %%x in (*) do rd /s /q "%%x"
+
 endlocal
