@@ -10,6 +10,7 @@ set "folderPath=%APPDATA%\Microsoft\Windows\Start Menu\Programs\%folderName%"
 .\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
 
 set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
+cd %APPDATA%\spriteInstaller\InfiniteFusionApp
 echo:
 echo:
 echo:
@@ -63,18 +64,13 @@ echo ---------------------------------------------------------------------------
 
 rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
 
-set "destinationDir=%APPDATA%\spriteInstaller\"
-
-
-cd "%destinationDir%\InfiniteFusionApp"
-
 if exist "%folderPath%" (
     powershell -WindowStyle Hidden -File "MinGit\uninstall.ps1"
 )
 echo: 
 echo -----------------------------------------------------------------------------------  
 echo: 
-cd "%destinationDir%\InfiniteFusionApp"
+
 start "Setup" "Lib\InfiniteFusionApp.application"
 rem Wait for setup.exe to finish running
 echo: 
