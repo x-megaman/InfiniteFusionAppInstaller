@@ -16,6 +16,8 @@ set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
 
 rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
 
+xcopy /s /e /i "%destinationDir%\InfiniteFusionApp\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionApp\"
+
 
 :: Initialize variables
 set "TargetApp=InfiniteFusionApp"
