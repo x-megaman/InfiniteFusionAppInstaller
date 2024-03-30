@@ -41,7 +41,7 @@ echo:
 echo:
 echo:
 echo -----------------------------------------------------------------------------------  
-echo Welcome! This is the Pokemon Infinite Fusion Game Installer!
+echo Welcome! This is the Pokemon Infinite Fusion Game Updater!
 echo Original Installer/Updater made by Hungry Pickle
 echo Updated by megaman
 echo: 
@@ -76,7 +76,7 @@ echo:
 echo Ignore them. It takes many attempts to establish a connection to our game repo.
 echo ----------------------------------------------------------------------------------- 
 %mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" >> installerrorlog.txt 2>&1
-%mgit% fetch origin releases --depth=1 >> installerrorlog.txt 2>&1
+%mgit% fetch origin releases >> installerrorlog.txt 2>&1
 %mgit% reset --hard origin/releases >> installerrorlog.txt 2>&1
 echo:
 echo Thank you for installing!
