@@ -20,6 +20,13 @@ The Fake Pokemon Infinite Fusion Website has uploaded my installer to their webs
 
 
 # RELEASE NOTES
+Version 2.9.1:
+ - Fixed the Update Button blocking the Play button on Holiday mode
+
+Version 2.9:
+ - Fixed the Update Button not working
+ - Fixed the Preloaded Validation due to 6.1 game release
+
 Version 2.8:
  - Renamed App to InfiniteFusionApp.exe
  - Updated the Sprite Menu to just be 2 options

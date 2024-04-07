@@ -9,9 +9,9 @@ cd /D %cwdPath%
 
 .\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
 
-set GIT_TRACE_PACKET=1
-set GIT_TRACE=1
-set GIT_CURL_VERBOSE=1
+set GIT_TRACE_PACKET=
+set GIT_TRACE=
+set GIT_CURL_VERBOSE=
 
 set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
 echo:
@@ -100,19 +100,11 @@ echo DO NOT click inside this window. It will pause the installation.
 echo Click Inside and Press ENTER to unpause.
 echo ----------------------------------------------------------------------------------- 
 echo:
-echo I keep seeing "failed to decrypt data, need more data" in the txt file!
-echo:
-echo Ignore them. It takes many attempts to establish a connection to our game repo.
-echo ----------------------------------------------------------------------------------- 
-echo:
 echo Grab a drink and relax!
 echo:
 echo When this step is done, this window will close and reopen for the 4th step.
 %mgit% fetch auto master --depth=1 >> errorlog.txt 2>&1
 %mgit% reset --hard auto/master >> errorlog.txt 2>&1
 echo:
-set GIT_TRACE_PACKET=
-set GIT_TRACE=
-set GIT_CURL_VERBOSE=
 
 exit
