@@ -61,7 +61,7 @@ set autogen_repo=%2
 rem Delete the Custom folder
 echo:
 echo This depends on your machine, be patient. Do not close...
-IF EXIST "%git_directory%" rd /s /q "%git_directory%" >> errorlog.txt 2>&1
+IF EXIST "%git_directory%" rd /s /q "%git_directory%" > errorlog.txt
 rmdir /s /q "%custom_directory%" >> errorlog.txt 2>&1
 echo Done Resetting CustomBattlers
 echo -----------------------------------------------------------------------------------  
@@ -72,39 +72,29 @@ rmdir /s /q "%battlers_directory%" >> errorlog.txt 2>&1
 echo Done Resetting the Auto Gen Folder
 echo -----------------------------------------------------------------------------------
 echo Step 3 - Installing Auto Gen Sprites  
-IF EXIST "%read_directory%" del "%read_directory%" >> errorlog.txt 2>&1
-IF EXIST "%credits_directory%" del "%credits_directory%" >> errorlog.txt 2>&1
-IF EXIST "%other_directory%" rd /s /q "%other_directory%" >> errorlog.txt 2>&1
-echo INSTALLING AUTO GEN SPRITES >> errorlog.txt 2>&1
-%mgit% config --global http.postBuffer 1048576000 >> errorlog.txt 2>&1
-%mgit% config --global http.version HTTP/1.1 >> errorlog.txt 2>&1
-%mgit% config --global pack.window 1 >> errorlog.txt 2>&1
-%mgit% config --global core.compression 0 >> errorlog.txt 2>&1
-%mgit% config --global core.packedGitLimit 512m >> errorlog.txt 2>&1
-%mgit% config --global core.packedGitWindowSize 512m >> errorlog.txt 2>&1
-%mgit% config --global pack.deltaCacheSize 2047m >> errorlog.txt 2>&1
-%mgit% config --global pack.packSizeLimit 2047m >> errorlog.txt 2>&1
-%mgit% config --global pack.windowMemory 2047m >> errorlog.txt 2>&1
-%mgit% config --global http.version HTTP/1.1 >> errorlog.txt 2>&1
-%mgit% init . >> errorlog.txt 2>&1
-%mgit% remote add auto %autogen_repo% >> errorlog.txt 2>&1
-echo:
-echo How Do I Check Progress?
-echo:
-echo %CD%\errorlog.txt: Open the txt file to check progress. Reopening the file will refresh progress.
-echo ----------------------------------------------------------------------------------- 
-echo:
-echo Reopening the txt file isn't updating any progress?
-echo:
-echo DO NOT click inside this window. It will pause the installation.
-echo Click Inside and Press ENTER to unpause.
-echo ----------------------------------------------------------------------------------- 
+IF EXIST "%read_directory%" del "%read_directory%" > errorlog.txt
+IF EXIST "%credits_directory%" del "%credits_directory%" > errorlog.txt
+IF EXIST "%other_directory%" rd /s /q "%other_directory%" > errorlog.txt
+echo INSTALLING AUTO GEN SPRITES > errorlog.txt
+%mgit% config --global http.postBuffer 1048576000
+%mgit% config --global http.version HTTP/1.1
+%mgit% config --global pack.window 1
+%mgit% config --global core.compression 0
+%mgit% config --global core.packedGitLimit 512m
+%mgit% config --global core.packedGitWindowSize 512m
+%mgit% config --global pack.deltaCacheSize 2047m
+%mgit% config --global pack.packSizeLimit 2047m
+%mgit% config --global pack.windowMemory 2047m
+%mgit% config --global http.version HTTP/1.1
+%mgit% init . > errorlog.txt
+%mgit% remote add auto %autogen_repo% > errorlog.txt
 echo:
 echo Grab a drink and relax!
 echo:
 echo When this step is done, this window will close and reopen for the 4th step.
-%mgit% fetch auto master --depth=1 >> errorlog.txt 2>&1
-%mgit% reset --hard auto/master >> errorlog.txt 2>&1
+echo ----------------------------------------------------------------------------------- 
+%mgit% fetch auto master --depth=1 > errorlog.txt
+%mgit% reset --hard auto/master > errorlog.txt
 echo:
 
 exit

@@ -60,7 +60,7 @@ set credits_directory=%CD%\Sprite Credits.csv
 set custom_repo=%3
 rem Delete the Custom folder
 
-IF EXIST "%git_directory%" rd /s /q "%git_directory%" >> errorlog.txt 2>&1
+IF EXIST "%git_directory%" rd /s /q "%git_directory%" > errorlog.txt
 rmdir /s /q "%custom_directory%" >> errorlog.txt 2>&1
 rmdir /s /q "%other_directory%" >> errorlog.txt 2>&1
 rmdir /s /q "%credits_directory%" >> errorlog.txt 2>&1
@@ -68,36 +68,26 @@ echo Done Resetting CustomBattlers
 echo -----------------------------------------------------------------------------------  
 echo Step 2 - Installing Custom Sprites
 echo:
-echo How Do I Check Progress?
-echo:
-echo %CD%\errorlog.txt: Open the txt file to check progress. Reopening the file will refresh progress.
-echo ----------------------------------------------------------------------------------- 
-echo:
-echo Reopening the txt file isn't updating any progress?
-echo:
-echo DO NOT click inside this window. It will pause the installation.
-echo Click Inside and Press ENTER to unpause.
-echo ----------------------------------------------------------------------------------- 
-echo:
 echo Grab a drink and relax!
 echo:
 echo When done, this will close and open Game.exe (not preloaded). DO NOT close it. This is needed to process the sprites correctly.
-echo INSTALLER CUSTOM SPRITES >> errorlog.txt 2>&1
-%mgit% config --global http.postBuffer 1048576000 >> errorlog.txt 2>&1
-%mgit% config --global http.version HTTP/1.1 >> errorlog.txt 2>&1
-%mgit% config --global pack.window 1 >> errorlog.txt 2>&1
-%mgit% config --global core.compression 0 >> errorlog.txt 2>&1
-%mgit% config --global core.packedGitLimit 512m >> errorlog.txt 2>&1
-%mgit% config --global core.packedGitWindowSize 512m >> errorlog.txt 2>&1
-%mgit% config --global pack.deltaCacheSize 2047m >> errorlog.txt 2>&1
-%mgit% config --global pack.packSizeLimit 2047m >> errorlog.txt 2>&1
-%mgit% config --global pack.windowMemory 2047m >> errorlog.txt 2>&1
-%mgit% config --global http.version HTTP/1.1 >> errorlog.txt 2>&1
-%mgit% init . >> errorlog.txt 2>&1
-%mgit% remote add custom %custom_repo% >> errorlog.txt 2>&1
+echo ----------------------------------------------------------------------------------- 
+echo INSTALLER CUSTOM SPRITES > errorlog.txt
+%mgit% config --global http.postBuffer 1048576000
+%mgit% config --global http.version HTTP/1.1
+%mgit% config --global pack.window 1
+%mgit% config --global core.compression 0
+%mgit% config --global core.packedGitLimit 512m
+%mgit% config --global core.packedGitWindowSize 512m
+%mgit% config --global pack.deltaCacheSize 2047m
+%mgit% config --global pack.packSizeLimit 2047m
+%mgit% config --global pack.windowMemory 2047m
+%mgit% config --global http.version HTTP/1.1
+%mgit% init . > errorlog.txt
+%mgit% remote add custom %custom_repo% > errorlog.txt
 echo:
-%mgit% fetch custom master --depth=1 >> errorlog.txt 2>&1
-%mgit% reset --hard custom/master >> errorlog.txt 2>&1
+%mgit% fetch custom master --depth=1 > errorlog.txt
+%mgit% reset --hard custom/master > errorlog.txt
 echo:
 echo Done Installing Custom Sprites
 echo:

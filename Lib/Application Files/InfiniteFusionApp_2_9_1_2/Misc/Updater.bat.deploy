@@ -1,0 +1,68 @@
+@echo off
+
+set batchDirectory=%0
+set cwdPath=%batchDirectory:\Updater.bat=%
+set cwdPathQ=%cwdPath:"=%
+
+cd /D %cwdPath%
+
+.\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
+
+set GIT_TRACE_PACKET=
+set GIT_TRACE=
+set GIT_CURL_VERBOSE=
+
+set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo -----------------------------------------------------------------------------------  
+echo Welcome! This is the Pokemon Infinite Fusion Game Updater!
+echo Original Installer/Updater made by Hungry Pickle
+echo Updated by megaman
+echo: 
+echo This will take about 3-10 minutes to install DEPENDING on YOUR computer AND YOUR internet.
+echo -----------------------------------------------------------------------------------  
+%mgit% config --global http.postBuffer 1048576000
+%mgit% config --global http.version HTTP/1.1
+%mgit% config --global pack.window 1
+%mgit% config --global core.compression 0
+%mgit% config --global core.packedGitLimit 512m
+%mgit% config --global core.packedGitWindowSize 512m
+%mgit% config --global pack.deltaCacheSize 2047m
+%mgit% config --global pack.packSizeLimit 2047m
+%mgit% config --global pack.windowMemory 2047m
+%mgit% config --global http.lowSpeedLimit 1000
+%mgit% config --global http.lowSpeedTime 600
+%mgit% init . >> installerrorlog.txt 2>&1
+%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > installerrorlog.txt
+%mgit% fetch origin releases > installerrorlog.txt
+%mgit% reset --hard origin/releases > installerrorlog.txt
+echo:
+echo Thank you for Updating!
+
+exit
