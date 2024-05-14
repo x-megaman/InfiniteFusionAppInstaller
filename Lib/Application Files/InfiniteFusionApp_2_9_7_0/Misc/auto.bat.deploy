@@ -1,0 +1,100 @@
+@echo off
+
+set batchDirectory=%0
+set cwdPath=%batchDirectory:\auto.bat=%
+set cwdPathQ=%cwdPath:"=%
+
+cd /D %cwdPath%
+
+
+.\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
+
+set GIT_TRACE_PACKET=
+set GIT_TRACE=
+set GIT_CURL_VERBOSE=
+
+set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo:
+echo ------------------------------------------------------------------------------  
+echo Welcome! This is the megaman Pokemon Infinite Fusion Sprite Installer. 
+echo: 
+echo This will take about 5-30 minutes to run DEPENDING on YOUR computer AND YOUR internet.
+echo This Installer has 4 Steps. Afterwards, we open Game.exe for you to index the sprites.
+echo Process will begin shortly...
+echo ------------------------------------------------------------------------------  
+echo Step 1 - Working on Resetting the CustomBattler folder
+
+set git_directory=%CD%\.git
+set custom_directory=%CD%\CustomBattlers
+set battlers_directory=%CD%\Battlers
+set read_directory=%CD%\README.md
+set other_directory=%CD%\Other
+set credits_directory=%CD%\Sprite Credits.csv
+set autogen_repo=%2
+
+rem Delete the Custom folder
+echo:
+echo This depends on your machine, be patient...
+IF EXIST "%git_directory%" rd /s /q "%git_directory%" > errorlog.txt
+rmdir /s /q "%custom_directory%" >> errorlog.txt 2>&1
+echo Done Resetting CustomBattlers
+echo ------------------------------------------------------------------------------  
+echo Step 2 - Working on Resetting the Auto Gen folder
+echo:
+echo This depends on your machine, be patient...
+rmdir /s /q "%battlers_directory%" >> errorlog.txt 2>&1
+echo Done Resetting the Auto Gen Folder
+echo ------------------------------------------------------------------------------
+echo Step 3 - Installing Auto Gen Sprites  
+IF EXIST "%read_directory%" del "%read_directory%" > errorlog.txt
+IF EXIST "%credits_directory%" del "%credits_directory%" > errorlog.txt
+IF EXIST "%other_directory%" rd /s /q "%other_directory%" > errorlog.txt
+echo INSTALLING AUTO GEN SPRITES > errorlog.txt
+%mgit% config --global http.postBuffer 1048576000
+%mgit% config --global http.version HTTP/2
+%mgit% config --global pack.window 1
+%mgit% config --global core.compression 0
+%mgit% config --global core.packedGitLimit 512m
+%mgit% config --global core.packedGitWindowSize 512m
+%mgit% config --global pack.deltaCacheSize 2047m
+%mgit% config --global pack.packSizeLimit 2047m
+%mgit% config --global pack.windowMemory 2047m
+%mgit% config --global http.lowSpeedLimit 0
+%mgit% config --global http.lowSpeedTime 999999 
+%mgit% init
+%mgit% remote add auto %autogen_repo% > errorlog.txt
+echo:
+echo Grab a drink and relax!
+echo:
+echo ------------------------------------------------------------------------------ 
+%mgit% fetch auto master --depth=1 > errorlog.txt
+%mgit% reset --hard auto/master > errorlog.txt
+echo:
+
+exit
