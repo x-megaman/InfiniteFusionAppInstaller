@@ -41,15 +41,15 @@ echo:
 echo:
 echo:
 echo:
-echo -----------------------------------------------------------------------------------  
+echo ------------------------------------------------------------------------------
 echo Welcome! This is the megaman Pokemon Infinite Fusion Sprite Installer. 
 echo: 
 echo This will take about 5-30 minutes to run DEPENDING on YOUR computer AND YOUR internet.
-echo This Installer has 2 Steps. Afterwards, this will close and it will open Game.exe for you to index the sprites.
-echo -----------------------------------------------------------------------------------  
+echo This Installer has 2 Steps. Afterwards, we will open the game for you to index the sprites.
+echo ------------------------------------------------------------------------------  
 echo Step 1 - Working on Resetting the CustomBattler folder
 echo:
-echo This depends on your machine, be patient. Do not close...
+echo This depends on your machine, be patient...
 
 set git_directory=%CD%\.git
 set custom_directory=%CD%\CustomBattlers
@@ -65,16 +65,15 @@ rmdir /s /q "%custom_directory%" >> errorlog.txt 2>&1
 rmdir /s /q "%other_directory%" >> errorlog.txt 2>&1
 rmdir /s /q "%credits_directory%" >> errorlog.txt 2>&1
 echo Done Resetting CustomBattlers
-echo -----------------------------------------------------------------------------------  
+echo ------------------------------------------------------------------------------  
 echo Step 2 - Installing Custom Sprites
 echo:
 echo Grab a drink and relax!
 echo:
-echo When done, this will close and open Game.exe (not preloaded). DO NOT close it. This is needed to process the sprites correctly.
-echo ----------------------------------------------------------------------------------- 
+echo ------------------------------------------------------------------------------ 
 echo INSTALLER CUSTOM SPRITES > errorlog.txt
 %mgit% config --global http.postBuffer 1048576000
-%mgit% config --global http.version HTTP/1.1
+%mgit% config --global http.version HTTP/2
 %mgit% config --global pack.window 1
 %mgit% config --global core.compression 0
 %mgit% config --global core.packedGitLimit 512m
@@ -82,16 +81,17 @@ echo INSTALLER CUSTOM SPRITES > errorlog.txt
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global pack.packSizeLimit 2047m
 %mgit% config --global pack.windowMemory 2047m
-%mgit% config --global http.version HTTP/1.1
-%mgit% init . > errorlog.txt
+%mgit% config --global http.lowSpeedLimit 0
+%mgit% config --global http.lowSpeedTime 999999 
+%mgit% init
 %mgit% remote add custom %custom_repo% > errorlog.txt
-echo:
 %mgit% fetch custom master --depth=1 > errorlog.txt
 %mgit% reset --hard custom/master > errorlog.txt
 echo:
 echo Done Installing Custom Sprites
 echo:
-echo ALL DONE!
+echo If you got any errors, use the info above to report to tech support in Discord!
+echo:
 echo Developed By: megaman
 echo:
 

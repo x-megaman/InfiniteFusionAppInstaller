@@ -41,15 +41,15 @@ echo:
 echo:
 echo:
 echo:
-echo -----------------------------------------------------------------------------------  
+echo ------------------------------------------------------------------------------  
 echo Welcome! This is the megaman Pokemon Infinite Fusion Sprite Installer. 
 echo: 
 echo This will take about 5-30 minutes to run DEPENDING on YOUR computer AND YOUR internet.
-echo This Installer has 2 Steps. Afterwards, this will close and it will open Game.exe for you to index the sprites.
-echo -----------------------------------------------------------------------------------  
+echo This Installer has 2 Steps. Afterwards, we will open Game.exe for you to index the sprites.
+echo ------------------------------------------------------------------------------  
 echo Step 1 - Working on Resetting the Auto Gen folder
 echo:
-echo This depends on your machine, be patient. Do not close...
+echo This depends on your machine, be patient..
 
 set git_directory=%CD%\.git
 set custom_directory=%CD%\CustomBattlers
@@ -62,26 +62,17 @@ rem Delete the Custom folder
 
 IF EXIST "%git_directory%" rd /s /q "%git_directory%" > errorlog.txt
 rmdir /s /q "%battlers_directory%" > errorlog.txt
-echo Done Resetting CustomBattlers
-echo -----------------------------------------------------------------------------------  
+echo Done Resetting Auto Gen
+echo ------------------------------------------------------------------------------  
 echo Step 2 - Installing Auto Gen Sprites
 echo:
-echo How Do I Check Progress?
-echo:
-echo %CD%\errorlog.txt: Open the txt file to check progress. Reopening the file will refresh progress.
-echo ----------------------------------------------------------------------------------- 
-echo:
-echo Reopening the txt file isn't updating any progress?
-echo:
-echo DO NOT click inside this window. It will pause the installation.
-echo Click Inside and Press ENTER to unpause.
-echo ----------------------------------------------------------------------------------- 
+echo ------------------------------------------------------------------------------ 
 echo Grab a drink and relax!
 echo:
 echo When done, this will close. Auto Gen sprites do not need to reindex so you are done once this is completed.
 echo INSTALLING AUTO GEN SPRITES > errorlog.txt
 %mgit% config --global http.postBuffer 1048576000
-%mgit% config --global http.version HTTP/1.1
+%mgit% config --global http.version HTTP/2
 %mgit% config --global pack.window 1
 %mgit% config --global core.compression 0
 %mgit% config --global core.packedGitLimit 512m
@@ -89,8 +80,9 @@ echo INSTALLING AUTO GEN SPRITES > errorlog.txt
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global pack.packSizeLimit 2047m
 %mgit% config --global pack.windowMemory 2047m
-%mgit% config --global http.version HTTP/1.1
-%mgit% init . > errorlog.txt
+%mgit% config --global http.lowSpeedLimit 0
+%mgit% config --global http.lowSpeedTime 999999 
+%mgit% init
 %mgit% remote add auto %autogen_repo% > errorlog.txt
 echo:
 %mgit% fetch auto master --depth=1 > errorlog.txt
@@ -98,7 +90,8 @@ echo:
 echo:
 echo Done Installing Auto Gen Sprites
 echo:
-echo ALL DONE!
+echo If you got any errors, use the info above to report to tech support in Discord!
+echo:
 echo Developed By: megaman
 echo:
 

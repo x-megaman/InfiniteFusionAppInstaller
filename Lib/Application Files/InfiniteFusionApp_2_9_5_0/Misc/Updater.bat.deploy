@@ -40,15 +40,16 @@ echo:
 echo:
 echo:
 echo:
-echo -----------------------------------------------------------------------------------  
+echo ------------------------------------------------------------------------------  
 echo Welcome! This is the Pokemon Infinite Fusion Game Updater!
 echo Original Installer/Updater made by Hungry Pickle
 echo Updated by megaman
 echo: 
 echo This will take about 3-10 minutes to install DEPENDING on YOUR computer AND YOUR internet.
-echo -----------------------------------------------------------------------------------  
+echo Process will begin shortly...
+echo ------------------------------------------------------------------------------  
 %mgit% config --global http.postBuffer 1048576000
-%mgit% config --global http.version HTTP/1.1
+%mgit% config --global http.version HTTP/2
 %mgit% config --global pack.window 1
 %mgit% config --global core.compression 0
 %mgit% config --global core.packedGitLimit 512m
@@ -56,13 +57,18 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global pack.packSizeLimit 2047m
 %mgit% config --global pack.windowMemory 2047m
-%mgit% config --global http.lowSpeedLimit 1000
-%mgit% config --global http.lowSpeedTime 600
-%mgit% init . >> installerrorlog.txt 2>&1
-%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > installerrorlog.txt
-%mgit% fetch origin releases > installerrorlog.txt
-%mgit% reset --hard origin/releases > installerrorlog.txt
+%mgit% config --global http.lowSpeedLimit 0
+%mgit% config --global http.lowSpeedTime 999999 
+%mgit% init > errorlog.txt
+echo:
+echo Process will begin shortly...
+%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > errorlog.txt
+%mgit% fetch origin releases > errorlog.txt
+%mgit% reset --hard origin/releases > errorlog.txt
 echo:
 echo Thank you for Updating!
+echo:
+echo Developed By: megaman
+echo:
 
 exit
