@@ -46,7 +46,7 @@ echo Developed by megaman
 echo: 
 echo -----------------------------------------------------------------------------------  
 %mgit% config --global http.postBuffer 1048576000
-%mgit% config --global http.version HTTP/1.1
+%mgit% config --global http.version HTTP/2
 %mgit% config --global pack.window 1
 %mgit% config --global core.compression 0
 %mgit% config --global core.packedGitLimit 512m
@@ -54,8 +54,8 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global pack.packSizeLimit 2047m
 %mgit% config --global pack.windowMemory 2047m
-%mgit% config --global http.lowSpeedLimit 1000
-%mgit% config --global http.lowSpeedTime 600
+%mgit% config --global http.lowSpeedLimit 0
+%mgit% config --global http.lowSpeedTime 999999 
 %mgit% config --global core.autocrlf false
 %mgit% init . 
 

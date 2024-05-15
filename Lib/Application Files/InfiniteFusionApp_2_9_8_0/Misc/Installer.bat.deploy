@@ -60,14 +60,8 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global http.lowSpeedTime 999999 
 %mgit% init . > errorlog.txt
 echo:
-echo Process will begin shortly...
 %mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > errorlog.txt
 %mgit% fetch origin releases --depth=1 > errorlog.txt
 %mgit% reset --hard origin/releases > errorlog.txt
-echo:
-echo Thank you for installing!
-echo:
-echo Developed By: megaman
-echo:
 
 exit

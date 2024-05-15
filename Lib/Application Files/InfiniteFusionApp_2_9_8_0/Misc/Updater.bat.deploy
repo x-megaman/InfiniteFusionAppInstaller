@@ -46,7 +46,6 @@ echo Original Installer/Updater made by Hungry Pickle
 echo Updated by megaman
 echo: 
 echo This will take about 3-10 minutes to install DEPENDING on YOUR computer AND YOUR internet.
-echo Process will begin shortly...
 echo ------------------------------------------------------------------------------  
 %mgit% config --global http.postBuffer 1048576000
 %mgit% config --global http.version HTTP/2
@@ -61,7 +60,6 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global http.lowSpeedTime 999999 
 %mgit% init > errorlog.txt
 echo:
-echo Process will begin shortly...
 %mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > errorlog.txt
 %mgit% fetch origin releases > errorlog.txt
 %mgit% reset --hard origin/releases > errorlog.txt
