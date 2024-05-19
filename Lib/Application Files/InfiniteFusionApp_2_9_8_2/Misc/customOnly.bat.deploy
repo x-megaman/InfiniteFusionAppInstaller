@@ -14,6 +14,17 @@ set GIT_TRACE=
 set GIT_CURL_VERBOSE=
 
 set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
+%mgit% config --global --unset http.postBuffer
+%mgit% config --global --unset http.version
+%mgit% config --global --unset pack.window
+%mgit% config --global --unset core.compression
+%mgit% config --global --unset core.packedGitLimit
+%mgit% config --global --unset core.packedGitWindowSize
+%mgit% config --global --unset pack.deltaCacheSize
+%mgit% config --global --unset pack.packSizeLimit
+%mgit% config --global --unset pack.windowMemory
+%mgit% config --global --unset http.lowSpeedLimit
+%mgit% config --global --unset http.lowSpeedTime
 echo:
 echo:
 echo:
@@ -74,25 +85,18 @@ echo ---------------------------------------------------------------------------
 echo INSTALLER CUSTOM SPRITES > errorlog.txt
 %mgit% config --global http.postBuffer 1048576000
 %mgit% config --global http.version HTTP/2
-%mgit% config --global pack.window 1
-%mgit% config --global core.compression 0
-%mgit% config --global core.packedGitLimit 512m
-%mgit% config --global core.packedGitWindowSize 512m
 %mgit% config --global pack.deltaCacheSize 2047m
-%mgit% config --global pack.packSizeLimit 2047m
-%mgit% config --global pack.windowMemory 2047m
 %mgit% config --global http.lowSpeedLimit 0
 %mgit% config --global http.lowSpeedTime 999999 
 %mgit% init
 %mgit% remote add custom %custom_repo% > errorlog.txt
-%mgit% fetch custom master --depth=1 > errorlog.txt
+%mgit% fetch custom master > errorlog.txt
 %mgit% reset --hard custom/master > errorlog.txt
-echo:
-echo Done Installing Custom Sprites
-echo:
-echo If you got any errors, use the info above to report to tech support in Discord!
-echo:
-echo Developed By: megaman
-echo:
+
+%mgit% config --global --unset http.postBuffer
+%mgit% config --global --unset http.version
+%mgit% config --global --unset pack.deltaCacheSize
+%mgit% config --global --unset http.lowSpeedLimit
+%mgit% config --global --unset http.lowSpeedTime
 
 exit

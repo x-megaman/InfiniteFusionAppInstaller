@@ -20,6 +20,9 @@ The Fake Pokemon Infinite Fusion Website has uploaded my installer to their webs
 
 
 # RELEASE NOTES
+Version 2.9.8.2:
+- Many optimizations for speed and errorlogs
+
 Version 2.9.5:
  - Added Extras menu option will option to Import your own sprites.
  - Select any sprites you want, and it will import and format them (if not in the correct format) into your CustomBattlers folder.
