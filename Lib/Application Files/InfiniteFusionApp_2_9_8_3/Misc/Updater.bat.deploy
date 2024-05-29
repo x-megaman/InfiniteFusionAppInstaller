@@ -63,11 +63,14 @@ echo ---------------------------------------------------------------------------
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global http.lowSpeedLimit 0
 %mgit% config --global http.lowSpeedTime 999999 
-%mgit% init . > errorlog.txt
+%mgit% init .
 echo:
-%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > errorlog.txt
-%mgit% fetch origin releases > errorlog.txt
-%mgit% reset --hard origin/releases > errorlog.txt
+%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git"
+
+REM Open a new command prompt window to run the fetch command and wait for it to complete
+start /wait cmd /c "%mgit% fetch origin releases"
+
+%mgit% reset --hard origin/releases
 
 %mgit% config --global --unset http.postBuffer
 %mgit% config --global --unset http.version

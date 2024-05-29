@@ -1,7 +1,7 @@
 @echo off
 
 set batchDirectory=%0
-set cwdPath=%batchDirectory:\autoOnly.bat=%
+set cwdPath=%batchDirectory:\customOnly.bat=%
 set cwdPathQ=%cwdPath:"=%
 
 cd /D %cwdPath%
@@ -52,15 +52,15 @@ echo:
 echo:
 echo:
 echo:
-echo ------------------------------------------------------------------------------  
+echo ------------------------------------------------------------------------------
 echo Welcome! This is the megaman Pokemon Infinite Fusion Sprite Installer. 
 echo: 
 echo This will take about 5-30 minutes to run DEPENDING on YOUR computer AND YOUR internet.
-echo This Installer has 2 Steps. Afterwards, we will open Game.exe for you to index the sprites.
+echo This Installer has 2 Steps. Afterwards, we will open the game for you to index the sprites.
 echo ------------------------------------------------------------------------------  
-echo Step 1 - Working on Resetting the Auto Gen folder
+echo Step 1 - Working on Resetting the CustomBattler folder
 echo:
-echo This depends on your machine, be patient..
+echo This depends on your machine, be patient...
 
 set git_directory=%CD%\.git
 set custom_directory=%CD%\CustomBattlers
@@ -68,32 +68,35 @@ set battlers_directory=%CD%\Battlers
 set read_directory=%CD%\README.md
 set other_directory=%CD%\Other
 set credits_directory=%CD%\Sprite Credits.csv
-set autogen_repo=%2
+set custom_repo=%3
 rem Delete the Custom folder
 
 IF EXIST "%git_directory%" rd /s /q "%git_directory%" > errorlog.txt
-rmdir /s /q "%battlers_directory%" > errorlog.txt
-echo Done Resetting Auto Gen
+rmdir /s /q "%custom_directory%" >> errorlog.txt 2>&1
+rmdir /s /q "%other_directory%" >> errorlog.txt 2>&1
+rmdir /s /q "%credits_directory%" >> errorlog.txt 2>&1
+echo Done Resetting CustomBattlers
 echo ------------------------------------------------------------------------------  
-echo Step 2 - Installing Auto Gen Sprites
+echo Step 2 - Installing Custom Sprites
 echo:
-echo ------------------------------------------------------------------------------ 
 echo Grab a drink and relax!
 echo:
-echo When done, this will close. Auto Gen sprites do not need to reindex so you are done once this is completed.
-echo INSTALLING AUTO GEN SPRITES > errorlog.txt
+echo ------------------------------------------------------------------------------ 
+echo INSTALLER CUSTOM SPRITES > errorlog.txt
 %mgit% config --global http.postBuffer 1048576000
 %mgit% config --global http.version HTTP/2
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global http.lowSpeedLimit 0
-%mgit% config --global http.lowSpeedTime 999999  
-%mgit% init
-%mgit% remote add auto %autogen_repo% > errorlog.txt
-%mgit% fetch auto master > errorlog.txt
-%mgit% reset --hard auto/master > errorlog.txt
+%mgit% config --global http.lowSpeedTime 999999 
+%mgit% init .
+%mgit% remote add custom %custom_repo%
+REM Open a new command prompt window to run the fetch command and wait for it to complete
+start /wait cmd /c "%mgit% fetch custom master"
+
+%mgit% reset --hard custom/master
 
 %mgit% config --global --unset http.postBuffer
-%mgit% config --global --unset http.versio
+%mgit% config --global --unset http.version
 %mgit% config --global --unset pack.deltaCacheSize
 %mgit% config --global --unset http.lowSpeedLimit
 %mgit% config --global --unset http.lowSpeedTime

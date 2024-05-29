@@ -1,6 +1,6 @@
 @echo off
 
-set batchDirectory=%0
+set batchDirectory=%~dp0
 set cwdPath=%batchDirectory:\Installer.bat=%
 set cwdPathQ=%cwdPath:"=%
 
@@ -24,6 +24,7 @@ set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
 %mgit% config --global --unset pack.windowMemory
 %mgit% config --global --unset http.lowSpeedLimit
 %mgit% config --global --unset http.lowSpeedTime
+
 echo:
 echo:
 echo:
@@ -58,16 +59,22 @@ echo Updated by megaman
 echo: 
 echo This will take about 3-10 minutes to install DEPENDING on YOUR computer AND YOUR internet.
 echo ------------------------------------------------------------------------------  
+
 %mgit% config --global http.postBuffer 1048576000
 %mgit% config --global http.version HTTP/2
 %mgit% config --global pack.deltaCacheSize 2047m
 %mgit% config --global http.lowSpeedLimit 0
 %mgit% config --global http.lowSpeedTime 999999 
-%mgit% init . > errorlog.txt
+
+
+%mgit% init .
 echo:
-%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git" > errorlog.txt
-%mgit% fetch origin releases > errorlog.txt
-%mgit% reset --hard origin/releases > errorlog.txt
+%mgit% remote add origin "https://github.com/infinitefusion/infinitefusion-e18.git"
+
+REM Open a new command prompt window to run the fetch command and wait for it to complete
+start /wait cmd /c "%mgit% fetch origin releases"
+
+%mgit% reset --hard origin/releases
 
 %mgit% config --global --unset http.postBuffer
 %mgit% config --global --unset http.version

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="InfiniteFusionApp.exe" version="2.9.8.2" publicKeyToken="203355974f29169c" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="InfiniteFusionApp.exe" version="2.9.8.3" publicKeyToken="203355974f29169c" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="eed712ef26adb.png.ico" asmv2:publisher="megaman" asmv2:product="InfiniteFusionApp" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="InfiniteFusionApp" version="2.9.8.2" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="InfiniteFusionApp" version="2.9.8.3" language="neutral" processorArchitecture="msil" />
     <commandLine file="InfiniteFusionApp.exe" parameters="" />
   </entryPoint>
   <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
@@ -56,14 +56,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="InfiniteFusionApp.exe" size="2234848">
-      <assemblyIdentity name="InfiniteFusionApp" version="2.9.8.2" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="InfiniteFusionApp.exe" size="2204640">
+      <assemblyIdentity name="InfiniteFusionApp" version="2.9.8.3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+La/l0PoFjIs3ty9mwIpZkjenhWXSk4e8ORaWCax6PM=</dsig:DigestValue>
+        <dsig:DigestValue>YrMMM3pqjAEM1OXkr4PJv6tw1GS2FvBIwD8W9qmk3sg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -238,22 +238,22 @@
       <dsig:DigestValue>lAT1KFkDzAnUCV0LVlok00UaaMAlHHksBcjDFa/Nv44=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Misc\auto.bat" size="3545">
+  <file name="Misc\auto.bat" size="3616">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HnUGpN9jQf+jgzfiMKDZg5sWMjAXu3q/neUqHI6Z0AU=</dsig:DigestValue>
+      <dsig:DigestValue>rFcOoncejoe2jOaaC5k/ndPMjSp7xX56mDG7FOdfbNA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Misc\autoOnly.bat" size="3104">
+  <file name="Misc\autoOnly.bat" size="3175">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vyTAA4NPXNq6eHHsWZkbU33jqnu5LqlDzvmwm90SgK0=</dsig:DigestValue>
+      <dsig:DigestValue>ZdhBbzacaLT4xGqgZXKuBPOAa1VQ9PahukUtwL+2BA4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Misc\batch.json" size="654">
@@ -262,25 +262,25 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>N65/1lIZfcq5qSo68YcPSnLHn9CpReWnxqiBtZRE/wQ=</dsig:DigestValue>
+      <dsig:DigestValue>BZkdYuCQRMyAwYmRsFdADuKkT252MZgDdeU/sOuV7XU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Misc\custom.bat" size="2206">
+  <file name="Misc\custom.bat" size="2277">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>yl8FrDGhz592/yDBfS8pBIUOgj1lcK6HYahUSQqVWtg=</dsig:DigestValue>
+      <dsig:DigestValue>RRRSfGGeL6T44Q7n6AA4u2rYFkWtOoh5fZOkWG00+wQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Misc\customOnly.bat" size="3115">
+  <file name="Misc\customOnly.bat" size="3186">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tgLZz6aDDnMypx7MVXOeXMoVavfAQO69xsKBxgWljQ0=</dsig:DigestValue>
+      <dsig:DigestValue>hGREwLlDCY8VZVJ22eKJAb4OfpY7U4KZ1lyIeCHvZH4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Misc\INSTALL_OR_UPDATE.bat" size="378">
@@ -292,22 +292,22 @@
       <dsig:DigestValue>XIWnTjWwKLJG0p/PzoIJYIB21lVzHm65/Ajsrn8hG50=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Misc\Installer.bat" size="2115">
+  <file name="Misc\Installer.bat" size="2176">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>QwEzleOzvoqKvKfYeLaaG+g1bN/WB9SOCnY/KzJNhuE=</dsig:DigestValue>
+      <dsig:DigestValue>ut0bxD0ydvxGh3pbCE60cm7ZbEput9Ed0ZKqh5IOB40=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Misc\Updater.bat" size="2188">
+  <file name="Misc\Updater.bat" size="2244">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OxlcDXQoguqdeccWD8ra+JGx7MsHJ3smC3Ns1sI+mMY=</dsig:DigestValue>
+      <dsig:DigestValue>lvh6jK5CwG/mcMv0iPklBwygdK/IlVA0kHwyZPl73YU=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=MEGAMANSNOWBLIN\willi" issuerKeyHash="49eaa3d8f6010bd25984635ba7478dfdee70a4b0" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>X288UbWHkQ5uqQCpCArXnv62UJDtSAnk1k0BSnUlKTw=</DigestValue></Reference></SignedInfo><SignatureValue>OnCbxOZpxBttFQWE3iXbDC0BsU/K17PN//2z1G82qSmB2l3QMEseyx78Tfm/8vSDtsco2LNHi/dXp+/Y8TJF1txJ8st331Gcavd6kcmwujOKLtWLXvTjZ8MZFbtRXGz0wNWBDX0FTBtEUE9ccJpYxMlKJkUGcir0DBFzPKT6S6g=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>5OahU0YRgS9/qWRuHTQb8xsP2HxLELTStkennKCStjYX2QiL8kyBhGU3w61B9lqN0qmmnMpRUxY7pbeMLItTIXt/7Qbj+Sgd7LfoaRZxYoXTbUIZT7n4ezh9H8dWPAt16T6JvdqiIbSXwl+TtHN/lJ7EViA06zceQgdgq0S9Tok=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="3c2925754a014dd6e40948ed9050b6fe9ed70a08a900a96e0e9187b5513c6f5f" Description="" Url=""><as:assemblyIdentity name="InfiniteFusionApp.exe" version="2.9.8.2" publicKeyToken="203355974f29169c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MEGAMANSNOWBLIN\willi</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>w83Hw+gHgbDbaU5APAm4WFZJyh21UfInnL3n1kgKuEw=</DigestValue></Reference></SignedInfo><SignatureValue>If0y8KSPPA3w4QhsMTXXFklE+NAniTBfDeW+Og3hxyv87vSo0wxqPlzfqhpdcZr/jlQXMB1omswLAU2yJvU0uUwwdD7Q8cvgUQHGqlfKXCpB9VGvykb0y6g8x7OnslHbIgGB73SaOwM8k4PI+3nIREezOIDbGNylA+FMVYh4wzc=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>5OahU0YRgS9/qWRuHTQb8xsP2HxLELTStkennKCStjYX2QiL8kyBhGU3w61B9lqN0qmmnMpRUxY7pbeMLItTIXt/7Qbj+Sgd7LfoaRZxYoXTbUIZT7n4ezh9H8dWPAt16T6JvdqiIbSXwl+TtHN/lJ7EViA06zceQgdgq0S9Tok=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQEMNpVu6hA79PCxcfuWbHjTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioATQBFAEcAQQBNAEEATgBTAE4ATwBXAEIATABJAE4AXAB3AGkAbABsAGkwHhcNMjQwMzE4MDQzMjIzWhcNMjUwMzE4MTAzMjIzWjA1MTMwMQYDVQQDHioATQBFAEcAQQBNAEEATgBTAE4ATwBXAEIATABJAE4AXAB3AGkAbABsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOTmoVNGEYEvf6lkbh00G/MbD9h8SxC00rZHp5ygkrY2F9kIi/JMgYRlN8OtQfZajdKpppzKUVMWO6W3jCyLUyF7f+0G4/koHey36GkWcWKF021CGU+5+Hs4fR/HVjwLdek+ib3aoiG0l8Jfk7Rzf5SexFYgNOs3HkIHYKtEvU6JAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAj+0D24+wTgC1Wj5p+vDxuIgthV0GfxOKoy/L9so9EMRkkzQnHKItOBC7sPb8DHoncz8jK64hWyvlNT84WykkBVNe0ZrXQaDHzkZiL5LiM0nVBUx9j2NueWXrP8ZtYYvSBmrgWyBHj/3mUsKjBrP9Cu4/5TLvlqkDe00CQfL1tNM=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=MEGAMANSNOWBLIN\willi" issuerKeyHash="49eaa3d8f6010bd25984635ba7478dfdee70a4b0" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>GWKzuZv127QDzTyvHp4zgemePf4pFMzyJVzedQcFdfs=</DigestValue></Reference></SignedInfo><SignatureValue>HHLm5LyFaIXtOFAzrrNBzXHm5mxUnokXp1JkKX+OpUtMkbxmCXfqz4s3Bwh59c3htxwenvBDgINhU/RWZk4sgfrHI2PnmIZinMgP8hpT+U9RxMqZR8NGwVYcDvVf7kk7MAMJNPXrGfGQyhWvQlVlwOS8jlJJ9IytCVuZ1bSLx88=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>5OahU0YRgS9/qWRuHTQb8xsP2HxLELTStkennKCStjYX2QiL8kyBhGU3w61B9lqN0qmmnMpRUxY7pbeMLItTIXt/7Qbj+Sgd7LfoaRZxYoXTbUIZT7n4ezh9H8dWPAt16T6JvdqiIbSXwl+TtHN/lJ7EViA06zceQgdgq0S9Tok=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="fb75050775de5c25f2cc1429fe3d9ee981339e1eaf3ccd03b4dbf59bb9b36219" Description="" Url=""><as:assemblyIdentity name="InfiniteFusionApp.exe" version="2.9.8.3" publicKeyToken="203355974f29169c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MEGAMANSNOWBLIN\willi</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>OgaJpHSmFZI/D6llSQuH8YBYvE3l2UG4QyVfyLhLlyY=</DigestValue></Reference></SignedInfo><SignatureValue>UcPnHeb/EB/Q615vyAOLR1dbaQUXAKCHTjincU+EngFq5grjRtsZv3AbQvAQjt78XhjH8FPQ8cO2FgVrlihmXF5ziS5l9pZ17NVq7q18J5C5L9iElb1wReXKfK6nSha3kkPtHgPXHRkoMWC4dMqHyD4MRiqLOW518Rz5XAscSHI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>5OahU0YRgS9/qWRuHTQb8xsP2HxLELTStkennKCStjYX2QiL8kyBhGU3w61B9lqN0qmmnMpRUxY7pbeMLItTIXt/7Qbj+Sgd7LfoaRZxYoXTbUIZT7n4ezh9H8dWPAt16T6JvdqiIbSXwl+TtHN/lJ7EViA06zceQgdgq0S9Tok=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQEMNpVu6hA79PCxcfuWbHjTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioATQBFAEcAQQBNAEEATgBTAE4ATwBXAEIATABJAE4AXAB3AGkAbABsAGkwHhcNMjQwMzE4MDQzMjIzWhcNMjUwMzE4MTAzMjIzWjA1MTMwMQYDVQQDHioATQBFAEcAQQBNAEEATgBTAE4ATwBXAEIATABJAE4AXAB3AGkAbABsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOTmoVNGEYEvf6lkbh00G/MbD9h8SxC00rZHp5ygkrY2F9kIi/JMgYRlN8OtQfZajdKpppzKUVMWO6W3jCyLUyF7f+0G4/koHey36GkWcWKF021CGU+5+Hs4fR/HVjwLdek+ib3aoiG0l8Jfk7Rzf5SexFYgNOs3HkIHYKtEvU6JAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAj+0D24+wTgC1Wj5p+vDxuIgthV0GfxOKoy/L9so9EMRkkzQnHKItOBC7sPb8DHoncz8jK64hWyvlNT84WykkBVNe0ZrXQaDHzkZiL5LiM0nVBUx9j2NueWXrP8ZtYYvSBmrgWyBHj/3mUsKjBrP9Cu4/5TLvlqkDe00CQfL1tNM=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
