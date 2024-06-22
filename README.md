@@ -20,6 +20,9 @@ The Fake Pokemon Infinite Fusion Website has uploaded my installer to their webs
 
 
 # RELEASE NOTES
+Version 2.9.8.7:
+- Various small bug fixes. Nothing major. Text changes, better error messages, etc.
+
 Version 2.9.8.3:
 - Fixing a bug that is hiding the fetch information when installing the game and sprites.
 - Updating how configs are pulled.
