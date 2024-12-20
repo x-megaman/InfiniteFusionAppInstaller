@@ -40,7 +40,7 @@ echo:
 echo:
 echo:
 echo -----------------------------------------------------------------------------------  
-echo Welcome! This is the Pokemon Infinite Fusion App Installer!
+echo Welcome! This is the Pokemon Infinite Fusion Launcher!
 echo Developed by megaman
 echo: 
 echo -----------------------------------------------------------------------------------  
@@ -71,10 +71,11 @@ set "destinationDir=%APPDATA%\spriteInstaller\"
 
 
 rmdir /s /q "%destinationDir%\InfiniteFusionApp"
-xcopy /s /e /i "%CD%\Lib" "%destinationDir%\InfiniteFusionApp\Lib"
-xcopy /s /e /i "%CD%\MinGit" "%destinationDir%\InfiniteFusionApp\MinGit"
+rmdir /s /q "%destinationDir%\InfiniteFusionLauncher"
+xcopy /s /e /i "%CD%\Lib" "%destinationDir%\InfiniteFusionLauncher\Lib"
+xcopy /s /e /i "%CD%\MinGit" "%destinationDir%\InfiniteFusionLauncher\MinGit"
 
-xcopy /s /e /i "%destinationDir%\InfiniteFusionApp\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionApp\"
+xcopy /s /e /i "%destinationDir%\InfiniteFusionLauncher\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionLauncher\"
 echo:
 echo:
 echo:
@@ -104,25 +105,25 @@ echo:
 echo:
 echo -----------------------------------------------------------------------------------  
 
-cd "%destinationDir%\InfiniteFusionApp"
+cd "%destinationDir%\InfiniteFusionLauncher"
 
 if exist "%folderPath%" (
     call "MinGit\uninstall.bat"
 )
 
-cd "%destinationDir%\InfiniteFusionApp" 
+cd "%destinationDir%\InfiniteFusionLauncher" 
 
-if not exist "Lib\InfiniteFusionApp.application" (
+if not exist "Lib\InfiniteFusionLauncher.application" (
     echo: EXTRACT InfiniteFusionSetup.zip. You did not extract before running this!!!
     echo: EXTRACT InfiniteFusionSetup.zip. You did not extract before running this!!!
     echo: EXTRACT InfiniteFusionSetup.zip. You did not extract before running this!!!
 )
 echo:
 echo:
-start "Setup" "Lib\InfiniteFusionApp.application"
+start "Setup" "Lib\InfiniteFusionLauncher.application"
 rem Wait for setup.exe to finish running
-echo Click Install to Install the App. 
-echo The app will be installed on your desktop. You can close this now.
+echo Click Install to Install the Launcher. 
+echo The Launcher will be installed on your desktop. You can close this now.
 echo: 
 echo -----------------------------------------------------------------------------------  
 pause

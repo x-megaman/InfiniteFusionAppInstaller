@@ -1,7 +1,7 @@
 @echo off
 
 set "destinationDir=%APPDATA%\spriteInstaller\"
-cd "%destinationDir%\InfiniteFusionApp"
+cd "%destinationDir%\InfiniteFusionLauncher"
 
 :: Define the folder name
 set "folderName=megaman"
@@ -41,7 +41,7 @@ echo:
 echo:
 echo:
 echo -----------------------------------------------------------------------------------  
-echo Welcome! This is the Pokemon Infinite Fusion App Updater!
+echo Welcome! This is the Pokemon Infinite Fusion Launcher!
 echo Developed by megaman
 echo: 
 echo -----------------------------------------------------------------------------------  
@@ -73,11 +73,11 @@ echo:
 echo -----------------------------------------------------------------------------------  
 echo: 
 
-start "Setup" "Lib\InfiniteFusionApp.application"
+start "Setup" "Lib\InfiniteFusionLauncher.application"
 rem Wait for setup.exe to finish running
 echo: 
-echo Click Install to Install the App. 
-echo The app will be installed on your desktop. You can close this now.
+echo Click Install to Install the Launcher. 
+echo The launcher will be installed on your desktop. You can close this now.
 echo: 
 echo -----------------------------------------------------------------------------------  
 pause

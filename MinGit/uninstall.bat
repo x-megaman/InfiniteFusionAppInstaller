@@ -3,7 +3,7 @@
 setlocal
 
 set "destinationDir=%APPDATA%\spriteInstaller"
-cd "%destinationDir%\InfiniteFusionApp"
+cd "%destinationDir%\InfiniteFusionLauncher"
 
 .\MinGit\7z.exe e -spf -aoa "MinGit\MinGit.7z"
 
@@ -16,11 +16,11 @@ set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
 
 rd /s /q "REQUIRED_BY_INSTALLER_UPDATER"
 
-xcopy /s /e /i /y "%destinationDir%\InfiniteFusionApp\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionApp\"
+xcopy /s /e /i /y "%destinationDir%\InfiniteFusionLauncher\MinGit\InfiniteFusionUpdater.bat" "%destinationDir%\InfiniteFusionLauncher\"
 
 
 :: Initialize variables
-set "TargetApp=InfiniteFusionApp"
+set "TargetApp=InfiniteFusionLauncher"
 set "UninstallString="
 
 :: Query registry for UninstallString
