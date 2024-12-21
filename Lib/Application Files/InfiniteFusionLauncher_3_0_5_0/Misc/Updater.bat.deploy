@@ -24,6 +24,18 @@ set mgit=".\REQUIRED_BY_INSTALLER_UPDATER\cmd\git.exe"
 %mgit% config --global --unset pack.windowMemory
 %mgit% config --global --unset http.lowSpeedLimit
 %mgit% config --global --unset http.lowSpeedTime
+
+REM Get the name of the current folder
+for %%F in ("%~dp0.") do set "currentFolder=%%~nF"
+
+REM Check if the folder name matches the allowed names
+if /i not "%currentFolder%"=="InfiniteFusion" if /i not "%currentFolder%"=="InfiniteFusion_6.2.4_preloaded" (
+    echo ERROR: This script must be run from a folder named "InfiniteFusion" or "InfiniteFusion_6.2.4_preloaded".
+    pause
+    exit /b 1
+)
+
+REM Proceed with the script if the folder name is correct
 echo:
 echo:
 echo:
