@@ -71,6 +71,7 @@ REM Open a new command prompt window to run the fetch command and wait for it to
 start /wait cmd /c "%mgit% fetch origin releases"
 
 %mgit% reset --hard origin/releases
+%mgit% clean -fd --exclude=REQUIRED_BY_INSTALLER_UPDATER/ --exclude=Updater.bat
 
 %mgit% config --global --unset http.postBuffer
 %mgit% config --global --unset http.version
